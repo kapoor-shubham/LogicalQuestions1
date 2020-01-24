@@ -85,3 +85,22 @@ func makeHashPiramid(piramidHeight: Int) {
 }
 
 makeHashPiramid(piramidHeight: 4)
+
+
+/*-----------------------------------------------------NextQuestion-----------------------------------------------------*/
+
+/* 4.Find the minimum and maximum values that can be calculated by summing exactly four of the five integers of an array.*/
+
+func findMinMax(numberArray: [Int]) {
+    var ascendingOrderedArray: [Int] = numberArray.sorted()
+    var desendingOrderedArray: [Int] = ascendingOrderedArray.reversed()
+    
+    ascendingOrderedArray.removeLast()
+    desendingOrderedArray.removeLast()
+    let minSum = ascendingOrderedArray.reduce(0, +)
+    let maxSum = desendingOrderedArray.reduce(0, +)
+    
+    print("\(minSum) \(maxSum)")
+}
+
+findMinMax(numberArray: [1,2,3,4,5])
